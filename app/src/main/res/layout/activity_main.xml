@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -15,7 +15,7 @@
         android:autofillHints="enter the amount"
         android:ems="10"
         android:hint="@string/cost_of_service"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:text="@string/how_was_the_service"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/cost" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -44,19 +44,19 @@
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radio_20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/amazing_20" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radio_18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/good_18" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radio_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ok_15" />
@@ -64,7 +64,7 @@
 
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
+        android:id="@+id/round_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calculate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,15 +85,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/round_value" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="@string/tip_amount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/calculate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
