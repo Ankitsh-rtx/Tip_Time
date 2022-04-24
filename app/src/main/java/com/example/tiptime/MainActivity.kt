@@ -1,6 +1,10 @@
 package com.example.tiptime
 
+import android.content.Context
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
@@ -16,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.resultTextView.text = getString(R.string.tip_amount, "0.00")
         binding.calculateBtn.setOnClickListener { calculateTip() }
+        binding.costEditTextLayout.setOnKeyListener { view, keyCode, _ -> handleKeyEvent(view, keyCode) }
     }
 
     private fun calculateTip() {
@@ -36,5 +41,16 @@ class MainActivity : AppCompatActivity() {
         val tipFormat = NumberFormat.getNumberInstance().format(tip)
         binding.resultTextView.text = getString(R.string.tip_amount, tipFormat)
 
+    }
+
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
     }
 }
