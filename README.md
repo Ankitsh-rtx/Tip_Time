@@ -17,6 +17,6 @@ An application for calculating the tip amount that can be given for the services
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="images/.png" width="250" padding-right="10px" >  <img src="images/dark.png" width="250"> 
 
 
